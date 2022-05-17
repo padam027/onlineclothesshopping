@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="tt.css">
+</head>
+<script src="tt.js"></script>
+
+<body background="na.jpg">
+    <div class="login">
+        <form name="Sign-in" autocomplete="on">
+            <h1 style="color: red;" id="p1">Login here:</h1><br><br>
+            <p>Enter your username:</p><br>
+            <input type="text" placeholder="Write here...." required><br><br>
+            <p>Enter your password:</p><br>
+            <input type="password" required><br><br>
+            <button type="Login" id="p2">Login</button><br><br>
+            <a href="gmail.html" style="background-color: rgb(45, 90, 238);" id="p3">Forgot password?</a><br><br>
+            -------------Or-------------<br><br>
+            <a href="regis.html"style="background-color:rgb(16, 180, 38);" id="p4">Create new
+                account</a><br>
+        </form>
+    </div>
+<script>
+    document.getElementById("p1").onmouseover = abc;
+    function abc(){
+        document.getElementById("p1").style.color = 'blue';
+    
+    }
+    document.getElementById("p1").onmouseout = xbc;
+    function xbc(){
+        document.getElementById("p1").style.color = 'red';
+    };
+    document.getElementById("p2").onmouseover = ybc;
+    function ybc(){
+        document.getElementById("p2").style.background = 'red';
+    }
+    document.getElementById("p2").onmouseout = bc;
+    function bc(){
+        document.getElementById("p2").style.background = 'blue';
+    };
+    document.getElementById("p3").onmouseover = ac;
+    function ac(){
+        document.getElementById("p3").style.background = 'deepskyblue';
+    }
+    document.getElementById("p3").onmouseout = xc;
+    function xc(){
+        document.getElementById("p3").style.background= 'deeppink';
+    };
+    document.getElementById("p4").onmouseover = ab;
+    function ab(){
+        document.getElementById("p4").style.background = 'blue';
+    }
+    document.getElementById("p4").onmouseout = xxc;
+    function xxc(){
+        document.getElementById("p4").style.background = 'green';
+    };
+</script>
+
+</body>
+
+</html>

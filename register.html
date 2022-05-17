@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width>, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="tt.css">
+</head>
+
+
+<body background="ne.jpg">
+    <div class="main">
+        <form name="sign-up" autocapitalize="on">
+            <h1 style="color:blue"; id="c1">Register here:</h1><br>
+            <p>Enter your username:</p><br>
+            <input type="text" placeholder="type your username..." required><br><br>
+            <p>Enter your email:</p><br>
+            <input type="email" placeholder="type your email..." required><br><br>
+            <p>Where are you from:</p><br>
+            <input list="provinces" placeholder="choice your province" required>
+            <datalist id="provinces">
+                <option value="province.1">
+                <option value="province.2">
+                <option value="province.3">
+                <option value="province.4">
+                <option value="province.5">
+                <option value="province.6">
+                <option value="province.7">
+            </datalist><br><br>
+            <p> Make your password:</p><br>
+            <input type="password" name="password" required><br><br>
+            <p>Confirm your password:</p><br>
+            <input type="password" name="password" required><br><br>
+            <button type="submit" id="c2">Submit</button><br><br>
+        </form>
+    </div>
+    <script>
+          document.getElementById("c1").onmouseover = abc;
+    function abc(){
+        document.getElementById("c1").style.color = 'red';
+    
+    }
+    document.getElementById("c1").onmouseout = xbc;
+    function xbc(){
+        document.getElementById("c1").style.color = 'blue';
+    }
+    document.getElementById("c2").onmouseover = ybc;
+    function ybc(){
+        document.getElementById("c2").style.background = 'blueviolet';
+    
+    }
+    document.getElementById("c2").onmouseout = zbc;
+    function zbc(){
+        document.getElementById("c2").style.background = 'blue';
+    }
+    </script>
+</body>
+
+</html>

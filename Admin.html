@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css"  href="tt.css">
+</head>
+<body background="dress.jpg">
+    <div class="Admin">
+        <form name="Sign-in" autocomplete="on">
+            <h1 style="color: blue;" id="p1">Login here:</h1><br><br>
+            <p>Enter your  username:</p><br>
+            <input type="text" placeholder="Write here...." required><br><br>
+            <p>Enter your password:</p><br>
+            <input type="password" required><br><br>
+            <button type="button" id="p2">Login</button><br><br>
+            <a href="gmail.html" style="background-color: blue" id="p3">Forget password?</a>
+
+</body>
+<script>
+    document.getElementById("p1").onmouseover = abc;
+    function abc(){
+        document.getElementById("p1").style.color = 'white';
+    
+    }
+    document.getElementById("p1").onmouseout = xbc;
+    function xbc(){
+        document.getElementById("p1").style.color = 'blue';
+    };
+    document.getElementById("p2").onmouseover = ybc;
+    function ybc(){
+        document.getElementById("p2").style.background = 'magenta';
+    }
+    document.getElementById("p2").onmouseout = bc;
+    function bc(){
+        document.getElementById("p2").style.background = 'blue';
+    };
+    document.getElementById("p3").onmouseover = ac;
+    function ac(){
+        document.getElementById("p3").style.background = 'tomato';
+    }
+    document.getElementById("p3").onmouseout = xc;
+    function xc(){
+        document.getElementById("p3").style.background= 'deeppink';
+    };
+
+</script>
+</html>
