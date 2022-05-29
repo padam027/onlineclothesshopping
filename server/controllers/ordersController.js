@@ -3,7 +3,9 @@ const Order = require('../models/order')
 
 //Getting all the orders
 const  getOrders = asyncHandler(async(req, res) => {
-    res.send('All the orders will be listed here')
+    const allOrders = await Order.find()
+if(allOrders.length == 0) throw new Error("There are no orders")
+    res.status(200).send(allOrders)
 
 })
 

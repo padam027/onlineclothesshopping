@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Orders</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(211, 211, 211);
+        }
+
+        #order-form {
+            background-color: white;
+            width: 20em;
+            border-radius: 0.4em;
+        }
+
+        .order-form-container {
+            padding: 3em 2em;
+        }
+        p {
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            color: rgb(134, 129, 129);
+        }
+        input {
+            width: 100%;
+            padding: 0.4em;
+            margin-bottom: 1.5em;
+            outline: none;
+            border: 1px solid grey;
+            border-radius: 0.4em;
+        }
+
+        button {
+            width: 100%;
+            background-color: rgb(7, 151, 26);
+            border: none;
+            outline: none;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: 0.6em 0em;
+            border-radius: 0.4em;
+
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button:hover {
+            background-color: rgb(14, 116, 27);
+
+        }
+    </style>
+</head>
+<body>
+    
+    <section id="order-form">
+        <div class="order-form-container">
+            <form>
+                <p>Name</p>
+                <input type="text" name="name" required>
+
+                <p>Mobile Number</p>
+                <input type="text" name="number" required>
+
+                <p>Email</p>
+                <input type="text" name="email" required>
+
+                <p>Address</p>
+                <input type="text" name="address" required>
+
+                <br>
+                <button>Confirm Purchase</button>
+
+
+            </form>
+        </div>
+    </section>
+
+
+<script>
+
+// Get all the fields
+const orderName = new URLSearchParams(window.location.search).get("orderName")
+const orderPrice = new URLSearchParams(window.location.search).get("orderPrice")
+const form = document.querySelector("form")
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const customerName = form.name.value
+    const customerNumber = form.number.value
+    const customerEmail = form.email.value
+    const customerAddress = form.address.value
+
+
+// Make order
+
+fetch('http://localhost:3000/orders', {
+  method : "POST",
+  headers : {
+      "Content-Type": "application/json"
+  },
+
+  body : JSON.stringify( {
+      orderName,
+      orderPrice,
+      customerName,
+      customerNumber,
+      customerEmail,
+      customerAddress
+
+  })
+})
+.then(response => response.json())
+.then(orders => {
+
+    if(orders.newOrder) {
+        location.assign('http://127.0.0.1:5500/success.html')
+    }
+    else {
+        location.assign('http://127.0.0.1:5500/orderFailed.html')
+    }
+
+})
+
+
+})
+
+</script>
+
+</body>
+</html>

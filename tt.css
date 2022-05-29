@@ -111,6 +111,7 @@ button{
     padding: 2px;
     font-weight: bolder;
     color: white;
+    cursor: pointer;
 }
 a{
     padding:2px;
