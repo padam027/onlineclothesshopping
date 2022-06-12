@@ -127,10 +127,10 @@ fetch('http://localhost:3000/orders', {
 .then(orders => {
 
     if(orders.newOrder) {
-        location.assign('http://127.0.0.1:5500/success.html')
+        location.assign('http://127.0.0.1:5500/onlineclothesshopping/success.html')
     }
     else {
-        location.assign('http://127.0.0.1:5500/orderFailed.html')
+        location.assign('http://127.0.0.1:5500/onlineclothesshopping/orderFailed.html')
     }
 
 })
