@@ -161,6 +161,7 @@
   <!--   Core JS Files   -->
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
   
   const tableBody = document.querySelector('#table-body')
@@ -192,7 +193,7 @@
                         <span class="text-secondary text-xs font-weight-bold">${customerAddress}</span>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Deliver</span>
+                        <span data-orderId= "${_id}" onclick="deliverOrder(event)" class="badge badge-sm bg-gradient-success">Deliver</span>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <span data-orderId= "${_id}" onclick="deleteOrder(event)"class="badge badge-sm bg-gradient-danger">Delete</span>
@@ -224,6 +225,33 @@
     const deletedOrder = await response.json()
     location.reload()
 }
+
+//Deliver order
+async function deliverOrder(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement;
+    const orderId = target.dataset.orderid
+
+    //Delete current order
+    const response = await fetch('http://localhost:3000/orders', {
+      method : "DELETE",
+      headers : {
+        'Content-Type' : 'application/json'
+      },
+      body : JSON.stringify({orderId})
+    })
+
+    const deletedOrder = await response.json()
+    swal("Good job!", "Order has been delivered!", "success");
+    setTimeout(() => {
+location.reload()
+    },2000)
+}
+
+deliverOrder()
+
+
+
 
   </script>
 </body>
