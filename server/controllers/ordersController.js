@@ -33,7 +33,12 @@ const  updateOrders = asyncHandler(async(req, res) => {
 
 // Deleting the orders
 const  deleteOrders = asyncHandler(async(req, res) => {
-    res.send('Orders deleted')
+    const deletedOrder = await Order.findByIdAndDelete(req.body.orderId)
+    res.status(200).send({
+        deletedOrder,
+        message: 'Order is deleted!'
+    })
+
 })
 
 module.exports = {
