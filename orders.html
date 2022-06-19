@@ -90,7 +90,7 @@
         </div>
     </section>
 
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 
 // Get all the fields
@@ -127,14 +127,12 @@ fetch('http://localhost:3000/orders', {
 .then(orders => {
 
     if(orders.newOrder) {
-        location.assign('http://127.0.0.1:5500/onlineclothesshopping/success.html')
-    }
-    else {
-        location.assign('http://127.0.0.1:5500/onlineclothesshopping/orderFailed.html')
-    }
+        swal("Thank You!", "Your order has been placed!", "success")
 
+       location.assign('/')
+    }
 })
-
+.catch(error =>  swal("Sorry!", "Something went wrong! Check your connection", "error") )
 
 })
 
