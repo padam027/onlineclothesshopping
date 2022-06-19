@@ -128,8 +128,6 @@ fetch('http://localhost:3000/orders', {
 
     if(orders.newOrder) {
         swal("Thank You!", "Your order has been placed!", "success")
-
-       location.assign('/')
     }
 })
 .catch(error =>  swal("Sorry!", "Something went wrong! Check your connection", "error") )
